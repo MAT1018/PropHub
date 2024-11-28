@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PropHub - Your trusted platform for buying and selling real estate properties.">
+    <title>PropHub - Buy & Sell Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">PropHub</div>
+        <nav class="nav-links">
+            <a href="#properties" aria-label="View Properties">Properties</a>
+            <a href="#about" aria-label="Learn About Us">About Us</a>
+            <a href="#contact" aria-label="Contact Us">Contact</a>
+        </nav>
+        <button class="hamburger" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Your Dream Home</h1>
+        <p>Buy and sell properties with ease.</p>
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search by location, type..." 
+                aria-label="Search for properties by location or type">
+            <button onclick="searchProperties()">Search</button>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="properties">
+        <h2>Featured Properties</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <picture>
+                    <source srcset="assets/property1.webp" type="image/webp">
+                    <img src="assets/property1.jpg" alt="Luxury Villa in Beverly Hills, CA">
+                </picture>
+                <h3>Luxury Villa</h3>
+                <p>Location: Beverly Hills, CA</p>
+                <p>Price: $2,500,000</p>
+            </div>
+            <div class="property-card">
+                <picture>
+                    <source srcset="assets/property2.webp" type="image/webp">
+                    <img src="assets/property2.jpg" alt="Modern Apartment in Manhattan, NY">
+                </picture>
+                <h3>Modern Apartment</h3>
+                <p>Location: Manhattan, NY</p>
+                <p>Price: $850,000</p>
+            </div>
+            <!-- Add more property cards here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About PropHub</h2>
+        <p>PropHub is a leading platform connecting buyers and sellers of real estate properties. We make finding your dream property easy and efficient.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" novalidate>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Your Name" required aria-required="true">
+            
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Your Email" required aria-required="true">
+            
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Your Message" required aria-required="true"></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+        <div id="feedbackContainer" role="alert"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PropHub. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Follow us on Facebook">FB</a>
+            <a href="#" aria-label="Follow us on Twitter">TW</a>
+            <a href="#" aria-label="Follow us on Instagram">IG</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
