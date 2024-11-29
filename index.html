@@ -3,216 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PropHub - Your Real Estate Destination</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>RealEstate Hub - Your Trusted Property Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/animations.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">PropHub</div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="properties.html">Properties</a>
-            <a href="sell.html">Sell/Rent Property</a>
-            <div class="auth-buttons">
-                <a href="signin.html" class="btn-signin">Sign In</a>
-                <a href="signup.html" class="btn-signup">Sign Up</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                RealEstate Hub
             </div>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+            <div class="nav-links">
+                <a href="pages/buy.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Buy</a>
+                <a href="pages/rent.html" class="nav-link"><i class="fas fa-key"></i> Rent</a>
+                <a href="pages/sell.html" class="nav-link"><i class="fas fa-tag"></i> Sell/Rent Out</a>
+                <button class="auth-btn" onclick="location.href='pages/signin.html'">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+                <button class="auth-btn" onclick="location.href='pages/signup.html'">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Find Your Dream Property</h1>
-            <p>Discover thousands of properties for sale and rent</p>
-            <div class="search-container">
-                <div class="search-row">
-                    <div class="search-group">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Enter location...">
-                    </div>
-                    <div class="search-group">
-                        <i class="fas fa-home"></i>
-                        <select>
-                            <option value="all">All Types</option>
-                            <option value="house">House</option>
-                            <option value="apartment">Apartment</option>
-                            <option value="villa">Villa</option>
-                            <option value="shop">Shop</option>
-                            <option value="office">Office Space</option>
-                            <option value="warehouse">Warehouse</option>
-                            <option value="land">Land</option>
-                        </select>
-                    </div>
-                    <div class="search-group">
-                        <i class="fas fa-tag"></i>
-                        <select>
-                            <option value="all">Buy/Rent</option>
-                            <option value="buy">Buy</option>
-                            <option value="rent">Rent</option>
-                        </select>
-                    </div>
-                    <button class="search-btn">Search</button>
+    <main>
+        <section class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Find Your Dream Property</h1>
+                <p>Secure and verified properties with DigiLocker integration</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search by location, property type...">
+                    <button><i class="fas fa-search"></i></button>
                 </div>
-                <div class="advanced-search">
-                    <a href="#" id="advancedSearchToggle">Advanced Search <i class="fas fa-chevron-down"></i></a>
-                    <div class="advanced-search-options" id="advancedSearchOptions">
-                        <div class="search-row">
-                            <div class="search-group">
-                                <label>Price Range</label>
-                                <div class="range-inputs">
-                                    <input type="number" placeholder="Min">
-                                    <span>to</span>
-                                    <input type="number" placeholder="Max">
-                                </div>
-                            </div>
-                            <div class="search-group">
-                                <label>Bedrooms</label>
-                                <select>
-                                    <option value="">Any</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4+</option>
-                                </select>
-                            </div>
-                            <div class="search-group">
-                                <label>Property Size</label>
-                                <input type="number" placeholder="Min sq.ft">
+                <div class="cta-buttons">
+                    <button onclick="location.href='pages/buy.html'" class="cta-btn">
+                        <i class="fas fa-home"></i> Buy Property
+                    </button>
+                    <button onclick="location.href='pages/rent.html'" class="cta-btn">
+                        <i class="fas fa-key"></i> Rent Property
+                    </button>
+                    <button onclick="location.href='pages/sell.html'" class="cta-btn">
+                        <i class="fas fa-tag"></i> List Property
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-properties">
+            <h2 data-aos="fade-up">Featured Properties</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide property-card">
+                        <img src="images/property1.jpg" alt="Luxury Villa">
+                        <div class="property-info">
+                            <h3>Luxury Villa</h3>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</p>
+                            <p class="price">$2,500,000</p>
+                            <div class="property-features">
+                                <span><i class="fas fa-bed"></i> 4 Beds</span>
+                                <span><i class="fas fa-bath"></i> 3 Baths</span>
+                                <span><i class="fas fa-ruler-combined"></i> 3500 sqft</span>
                             </div>
                         </div>
                     </div>
+                    <!-- More property slides -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section class="features" data-aos="fade-up">
+            <h2>Why Choose Us?</h2>
+            <div class="feature-cards">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>DigiLocker Verification</h3>
+                    <p>Secure identity verification through DigiLocker integration</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Verified Properties</h3>
+                    <p>All properties are verified with proper documentation</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Transactions</h3>
+                    <p>Safe and transparent property transactions</p>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <section class="categories">
-        <h2>Browse by Category</h2>
-        <div class="category-grid">
-            <a href="#" class="category-card">
-                <i class="fas fa-home"></i>
-                <h3>Houses</h3>
-                <p>Find your perfect home</p>
-            </a>
-            <a href="#" class="category-card">
-                <i class="fas fa-building"></i>
-                <h3>Apartments</h3>
-                <p>Modern living spaces</p>
-            </a>
-            <a href="#" class="category-card">
-                <i class="fas fa-store"></i>
-                <h3>Commercial</h3>
-                <p>Shops & offices</p>
-            </a>
-            <a href="#" class="category-card">
-                <i class="fas fa-tree"></i>
-                <h3>Land</h3>
-                <p>Build your dreams</p>
-            </a>
-        </div>
-    </section>
-
-    <section class="featured">
-        <div class="section-header">
-            <h2>Featured Properties</h2>
-            <a href="properties.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="property-grid">
-            <div class="property-card">
-                <div class="property-tag">Featured</div>
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6" alt="Modern House">
-                <div class="property-info">
-                    <span class="property-price">$450,000</span>
-                    <h3>Modern Family House</h3>
-                    <p class="property-location"><i class="fas fa-map-marker-alt"></i> 123 Main St, City</p>
-                    <div class="property-stats">
-                        <span><i class="fas fa-bed"></i> 4 Beds</span>
-                        <span><i class="fas fa-bath"></i> 3 Baths</span>
-                        <span><i class="fas fa-ruler-combined"></i> 2,500 sq.ft</span>
-                    </div>
-                    <div class="property-footer">
-                        <span class="property-type">For Sale</span>
-                        <button class="btn-view">View Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class="property-card">
-                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="Luxury Apartment">
-                <div class="property-info">
-                    <span class="property-price">$2,500/month</span>
-                    <h3>Luxury Apartment</h3>
-                    <p class="property-location"><i class="fas fa-map-marker-alt"></i> 456 Park Ave, City</p>
-                    <div class="property-stats">
-                        <span><i class="fas fa-bed"></i> 2 Beds</span>
-                        <span><i class="fas fa-bath"></i> 2 Baths</span>
-                        <span><i class="fas fa-ruler-combined"></i> 1,200 sq.ft</span>
-                    </div>
-                    <div class="property-footer">
-                        <span class="property-type">For Rent</span>
-                        <button class="btn-view">View Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class="property-card">
-                <div class="property-tag">New</div>
-                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716" alt="Commercial Shop">
-                <div class="property-info">
-                    <span class="property-price">$300,000</span>
-                    <h3>Commercial Shop</h3>
-                    <p class="property-location"><i class="fas fa-map-marker-alt"></i> 789 Market St, City</p>
-                    <div class="property-stats">
-                        <span><i class="fas fa-ruler-combined"></i> 800 sq.ft</span>
-                        <span><i class="fas fa-parking"></i> 2 Parking</span>
-                    </div>
-                    <div class="property-footer">
-                        <span class="property-type">For Sale</span>
-                        <button class="btn-view">View Details</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Want to Sell Your Property?</h2>
-            <p>List your property with us and reach thousands of potential buyers</p>
-            <a href="sell.html" class="btn-primary">List Your Property</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2>Why Choose PropHub?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Trusted Platform</h3>
-                <p>Verified properties and secure transactions</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>Best Deals</h3>
-                <p>Competitive prices and great value</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Expert assistance whenever you need</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>PropHub</h3>
-                <p>Your trusted partner in real estate</p>
+                <h4><i class="fas fa-phone"></i> Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> support@realestatehub.com</p>
+                <p><i class="fas fa-phone-alt"></i> +1 234 567 890</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -221,30 +127,21 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#">About Us</a>
-                <a href="#">Properties</a>
-                <a href="#">Add Property</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Property Types</h3>
-                <a href="#">Houses</a>
-                <a href="#">Apartments</a>
-                <a href="#">Commercial</a>
-                <a href="#">Land</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> info@prophub.com</p>
-                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, City</p>
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="pages/about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="pages/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="pages/privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 PropHub. All rights reserved.</p>
+            <p>&copy; 2024 RealEstate Hub. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

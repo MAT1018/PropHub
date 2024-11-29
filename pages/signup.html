@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - RealEstate Hub</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <form class="auth-form" id="signupForm">
+            <h2>Create Account</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            <div class="digilocker-section">
+                <p>Verify your identity with DigiLocker</p>
+                <button type="button" class="digilocker-btn" onclick="connectDigilocker()">
+                    Connect DigiLocker
+                </button>
+            </div>
+            <button type="submit" class="auth-submit">Sign Up</button>
+            <p class="auth-switch">
+                Already have an account? <a href="signin.html">Sign In</a>
+            </p>
+        </form>
+    </div>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property - RealEstate Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/property.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <i class="fas fa-home"></i>
+                    RealEstate Hub
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="buy.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Buy</a>
+                <a href="rent.html" class="nav-link"><i class="fas fa-key"></i> Rent</a>
+                <a href="sell.html" class="nav-link active"><i class="fas fa-tag"></i> Sell/Rent Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="property-form-container">
+        <h1>List Your Property</h1>
+        <form id="propertyListingForm" class="property-form">
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                <div class="form-group">
+                    <label for="propertyType">Property Type</label>
+                    <select id="propertyType" required>
+                        <option value="">Select Property Type</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="house">House</option>
+                        <option value="villa">Villa</option>
+                        <option value="plot">Plot</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="listingType">Listing Type</label>
+                    <select id="listingType" required>
+                        <option value="">Select Listing Type</option>
+                        <option value="sell">Sell</option>
+                        <option value="rent">Rent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price (₹)</label>
+                    <input type="number" id="price" required placeholder="Enter amount in INR">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Property Details</h2>
+                <div class="form-group">
+                    <label for="area">Area (sq ft)</label>
+                    <input type="number" id="area" required>
+                </div>
+                <div class="form-group">
+                    <label for="bedrooms">Bedrooms</label>
+                    <input type="number" id="bedrooms" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="bathrooms">Bathrooms</label>
+                    <input type="number" id="bathrooms" min="1">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Location</h2>
+                <div class="form-group">
+                    <label for="address">Complete Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Property Images</h2>
+                <div class="image-upload-container">
+                    <div class="image-upload-box" onclick="document.getElementById('propertyImages').click()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Click to upload images</p>
+                        <span>(Maximum 10 images)</span>
+                    </div>
+                    <input type="file" id="propertyImages" multiple accept="image/*" style="display: none">
+                    <div id="imagePreviewContainer" class="image-preview-container"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Property Documents</h2>
+                <div class="document-upload-container">
+                    <div class="document-type">
+                        <label>Property Papers</label>
+                        <div class="upload-box" onclick="document.getElementById('propertyPapers').click()">
+                            <i class="fas fa-file-upload"></i>
+                            <p>Upload Property Papers</p>
+                        </div>
+                        <input type="file" id="propertyPapers" accept=".pdf,.jpg,.jpeg,.png" style="display: none">
+                    </div>
+                    <div class="document-type">
+                        <label>DigiLocker Documents</label>
+                        <button type="button" class="digilocker-btn" onclick="connectToDigilocker()">
+                            Connect DigiLocker
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">List Property</button>
+        </form>
+    </main>
+
+    <script src="../js/property-form.js"></script>
+</body>
+</html>
