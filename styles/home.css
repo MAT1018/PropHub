@@ -91,7 +91,7 @@
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
-/* Featured Properties section */
+
 .featured-properties {
     padding: 6rem 5%;
     background-color: var(--light-bg);
@@ -156,7 +156,7 @@
     gap: 0.3rem;
 }
 
-/* Features section */
+
 .features {
     padding: 6rem 5%;
     background-color: var(--white);

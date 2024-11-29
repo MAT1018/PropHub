@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ body {
     color: var(--text-color);
 }
 
-/* Navbar styles */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -85,7 +85,7 @@ body {
     transition: 0.3s;
 }
 
-/* Footer styles */
+
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -117,7 +117,7 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
