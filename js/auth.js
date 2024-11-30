@@ -18,7 +18,7 @@ if (signupForm) {
 
         // Here you would typically send the data to a backend server
         console.log('Sign up data:', formData);
-        alert('Sign up successful! Please check your email for verification.');
+        alert('Sign up successful!');
     });
 }
 
@@ -43,3 +43,32 @@ function connectDigilocker() {
     alert('Connecting to DigiLocker... This is a mock implementation.');
     // Here you would implement the actual DigiLocker integration
 }
+
+
+document.getElementById('signupForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/api/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullName, email, phone, password, confirmPassword }),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert(result.message);
+        } else {
+            alert(result.error);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    }
+});

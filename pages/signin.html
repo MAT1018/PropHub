@@ -26,5 +26,36 @@
         </form>
     </div>
     <script src="../js/auth.js"></script>
+
+    <script>
+        document.getElementById("signinForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch('http://localhost:3001/api/signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(data.message);  // Show login success message
+                    window.location.href = 'index.html'; // Redirect to homepage after login
+                } else {
+                    alert(data.error || "Something went wrong!"); // Display backend error message
+                }
+            } catch (err) {
+                console.error("Fetch error:", err); // Log fetch error for debugging
+                alert("An error occurred: " + err.message); // Display error message
+            }
+        });
+    </script>
 </body>
 </html>

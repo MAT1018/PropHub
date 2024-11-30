@@ -43,6 +43,55 @@
             </p>
         </form>
     </div>
-    <script src="../js/auth.js"></script>
+    
+    <script>
+        // Handling form submission
+        document.getElementById("signupForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ fullName, email, phone, password, confirmPassword }),
+                });
+
+                const data = await response.json();
+                if (response.status === 201) {
+                    // Redirect to index.html after successful sign-up
+                    localStorage.setItem('loggedIn', 'true'); // Store login state
+                    window.location.href = 'buy.html'; // Redirect to the homepage
+                } else {
+                    alert(data.error); // Display error message
+                }
+            } catch (err) {
+                console.error("Error:", err);
+                alert("An error occurred. Please try again.");
+            }
+        });
+
+        // Update UI for logged-in user
+        window.onload = function() {
+            if (localStorage.getItem('loggedIn') === 'true') {
+                // Change the UI to show "Sign Out" instead of "Sign In" and "Sign Up"
+                const authSwitch = document.querySelector('.auth-switch');
+                authSwitch.innerHTML = '<a href="index.html" onclick="signOut()">Sign Out</a>';
+            }
+        }
+
+        function signOut() {
+            // Clear the login state and redirect to Sign In page
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'signin.html'; // Or any other page you'd like
+        }
+    </script>
 </body>
 </html>

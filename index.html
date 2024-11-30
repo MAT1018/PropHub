@@ -22,12 +22,9 @@
                 <a href="pages/buy.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Buy</a>
                 <a href="pages/rent.html" class="nav-link"><i class="fas fa-key"></i> Rent</a>
                 <a href="pages/sell.html" class="nav-link"><i class="fas fa-tag"></i> Sell/Rent Out</a>
-                <button class="auth-btn" onclick="location.href='pages/signin.html'">
-                    <i class="fas fa-sign-in-alt"></i> Sign In
-                </button>
-                <button class="auth-btn" onclick="location.href='pages/signup.html'">
-                    <i class="fas fa-user-plus"></i> Sign Up
-                </button>
+                <span id="authLinks">
+                    <!-- Links will be dynamically updated here based on login state -->
+                </span>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -143,5 +140,37 @@
     <script src="js/animations.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        // Dynamically change the "Sign In/Sign Up" buttons to "Sign Out" based on login state
+        window.onload = function() {
+            const authLinks = document.getElementById('authLinks');
+            if (localStorage.getItem('loggedIn') === 'true') {
+                // If the user is logged in, show the "Sign Out" button
+                authLinks.innerHTML = `
+                    <button class="auth-btn" onclick="signOut()">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                    </button>
+                `;
+            } else {
+                // If the user is not logged in, show the "Sign In" and "Sign Up" buttons
+                authLinks.innerHTML = `
+                    <button class="auth-btn" onclick="location.href='pages/signin.html'">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    <button class="auth-btn" onclick="location.href='pages/signup.html'">
+                        <i class="fas fa-user-plus"></i> Sign Up
+                    </button>
+                `;
+            }
+        }
+
+        function signOut() {
+            // Remove the login state from localStorage
+            localStorage.removeItem('loggedIn');
+            // Redirect to the sign-in page
+            window.location.href = 'pages/signin.html';
+        }
+    </script>
 </body>
 </html>
