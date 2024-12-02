@@ -23,7 +23,7 @@
                 <a href="pages/rent.html" class="nav-link"><i class="fas fa-key"></i> Rent</a>
                 <a href="pages/sell.html" class="nav-link"><i class="fas fa-tag"></i> Sell/Rent Out</a>
                 <span id="authLinks">
-                    <!-- Links will be dynamically updated here based on login state -->
+                    
                 </span>
             </div>
             <div class="hamburger">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- More property slides -->
+                 
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -84,7 +84,7 @@
         <section class="features" data-aos="fade-up">
             <h2>Why Choose Us?</h2>
             <div class="feature-cards">
-                <!-- First row with 3 feature cards -->
+                
                 <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="feature-cards">
-                <!-- Second row with 2 feature cards -->
+               
                 <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -160,18 +160,16 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Dynamically change the "Sign In/Sign Up" buttons to "Sign Out" based on login state
+       
         window.onload = function() {
             const authLinks = document.getElementById('authLinks');
             if (localStorage.getItem('loggedIn') === 'true') {
-                // If the user is logged in, show the "Sign Out" button
                 authLinks.innerHTML = `
                     <button class="auth-btn" onclick="signOut()">
                         <i class="fas fa-sign-out-alt"></i> Sign Out
                     </button>
                 `;
             } else {
-                // If the user is not logged in, show the "Sign In" and "Sign Up" buttons
                 authLinks.innerHTML = `
                     <button class="auth-btn" onclick="location.href='pages/signin.html'">
                         <i class="fas fa-sign-in-alt"></i> Sign In
@@ -184,9 +182,7 @@
         }
 
         function signOut() {
-            // Remove the login state from localStorage
             localStorage.removeItem('loggedIn');
-            // Redirect to the sign-in page
             window.location.href = 'pages/signin.html';
         }
     </script>
