@@ -1,2 +1,0 @@
-MONGO_URI=mongodb+srv://ayaan:abcpst001@realestate.trvsp.mongodb.net/realestate?retryWrites=true&w=majority&appName=RealEstate
-PORT=3000

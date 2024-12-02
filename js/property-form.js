@@ -76,7 +76,6 @@ document.getElementById('propertyListingForm').addEventListener('submit', (e) =>
         formData.append(`image${index}`, image);
     });
 
-    // Here you would typically send the formData to a backend server
     console.log('Form submitted with data:', Object.fromEntries(formData));
     alert('Property listed successfully!');
 });
