@@ -46,14 +46,14 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert(data.message);  // Show login success message
-                    window.location.href = 'index.html'; // Redirect to homepage after login
+                    alert(data.message);  
+                    window.location.href = 'index.html'; 
                 } else {
-                    alert(data.error || "Something went wrong!"); // Display backend error message
+                    alert(data.error || "Something went wrong!"); 
                 }
             } catch (err) {
-                console.error("Fetch error:", err); // Log fetch error for debugging
-                alert("An error occurred: " + err.message); // Display error message
+                console.error("Fetch error:", err);
+                alert("An error occurred: " + err.message); 
             }
         });
     </script>
