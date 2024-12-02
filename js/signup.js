@@ -18,7 +18,7 @@ mongoose
     .then(() => console.log('MongoDB connected successfully'))
     .catch((err) => {
         console.error('Failed to connect to MongoDB:', err.message);
-        process.exit(1); // Exit the process on MongoDB connection failure
+        process.exit(1); 
     });
 
 

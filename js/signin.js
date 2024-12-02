@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3001',  // Make sure this is where your front-end is hosted
+    origin: 'http://localhost:3001',  
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .then(() => console.log("MongoDB Connected"))
     .catch(err => {
         console.error("MongoDB connection error:", err);
-        process.exit(1);  // Exit if MongoDB connection fails
+        process.exit(1);  
     });
 
 // User Schema
